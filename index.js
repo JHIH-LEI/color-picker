@@ -1,17 +1,18 @@
-const rgbSlider = document.querySelectorAll('.range')
+// rgb slider
 const redRangeInput = document.getElementById('rgb-red-input-picker')
 const greenRangeInput = document.getElementById('rgb-green-input-picker')
 const blueRangeInput = document.getElementById('rgb-blue-input-picker')
+// rgb text
 const redTextInput = document.getElementById('input-text-red')
 const greenTextInput = document.getElementById('input-text-green')
 const blueTextInput = document.getElementById('input-text-blue')
+// hex input
 const hexInputText = document.getElementById('hex-input-text')
 
 // rgb色碼
 let redNum = 0
 let greenNum = 0
 let blueNum = 0
-
 
 // 當拉桿改變時，改變背景顏色
 redRangeInput.addEventListener('input', e => {
@@ -34,6 +35,8 @@ blueRangeInput.addEventListener('input', e => {
   // 讓藍色輸入框的數字跟著改變
   blueTextInput.value = blueNum
 })
+
+
 
 document.body.addEventListener('input', e => {
   // 讓hex輸入框數字跟著改變
