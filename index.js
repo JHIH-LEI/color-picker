@@ -6,6 +6,9 @@ const blueRangeInput = document.getElementById('rgb-blue-input-picker')
 const redTextInput = document.getElementById('input-text-red')
 const greenTextInput = document.getElementById('input-text-green')
 const blueTextInput = document.getElementById('input-text-blue')
+
+// color picker
+let colorPicker = document.getElementById('pick')
 // hex input
 const hexInputText = document.getElementById('hex-input-text')
 
@@ -41,6 +44,8 @@ blueRangeInput.addEventListener('input', e => {
 document.body.addEventListener('input', e => {
   // 讓hex輸入框數字跟著改變
   hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
+  // 讓color picker裡面的顏色跟著改變
+  colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
 })
 
 function rgbToHex(r, g, b) {
