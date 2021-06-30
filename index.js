@@ -3,7 +3,6 @@ const rgb = document.querySelector('.rgb')
 let colorPicker = document.getElementById('pick')
 // hex input
 const hexInputText = document.getElementById('hex-input-text')
-
 // rgb色碼
 let redNum = 0
 let greenNum = 0
@@ -40,26 +39,28 @@ const blueTextInput = document.getElementById('input-text-blue')
 // 當拉桿改變時，改變背景顏色
 redRangeInput.addEventListener('input', e => {
   redNum = e.target.value
-  document.body.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
   // 讓紅色輸入框的數字跟著改變
   redTextInput.value = redNum
 })
 
 greenRangeInput.addEventListener('input', e => {
   greenNum = e.target.value
-  document.body.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
   // 讓綠色輸入框的數字跟著改變
   greenTextInput.value = greenNum
 })
 
 blueRangeInput.addEventListener('input', e => {
   blueNum = e.target.value
-  document.body.style.backgroundColor = `rgb(${redNum},${greenNum},${blueNum})`;
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
   // 讓藍色輸入框的數字跟著改變
   blueTextInput.value = blueNum
 })
 
-
+function changeBackground(rgb) {
+  document.body.style.backgroundColor = rgb
+}
 
 document.body.addEventListener('input', e => {
   // 讓hex輸入框數字跟著改變
