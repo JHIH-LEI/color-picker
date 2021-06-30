@@ -1,12 +1,4 @@
-// rgb slider
-const redRangeInput = document.getElementById('rgb-red-input-picker')
-const greenRangeInput = document.getElementById('rgb-green-input-picker')
-const blueRangeInput = document.getElementById('rgb-blue-input-picker')
-// rgb text
-const redTextInput = document.getElementById('input-text-red')
-const greenTextInput = document.getElementById('input-text-green')
-const blueTextInput = document.getElementById('input-text-blue')
-
+const rgb = document.querySelector('.rgb')
 // color picker
 let colorPicker = document.getElementById('pick')
 // hex input
@@ -16,6 +8,34 @@ const hexInputText = document.getElementById('hex-input-text')
 let redNum = 0
 let greenNum = 0
 let blueNum = 0
+
+function renderRGBSlider(colors) {
+  let rawHTML = ``
+  colors.forEach(color => {
+    rawHTML += `
+     <div class="rgb-input" id="rgb-${color}">
+        <lable class="tag" for="rgb-${color}-input-picker" id="${color}-tag">${color.slice(0, 1)}</lable>
+        <input id="rgb-${color}-input-picker" type="range" value="0" min="0" max="255">
+        <input class="rgb-text-input" id="input-text-${color}" type="text" placeholder="0" minlength="1" maxlength="3"
+          size="5">
+      </div>
+    `
+  }
+  );
+  rgb.innerHTML += rawHTML
+}
+
+renderRGBSlider(['red', 'green', 'blue'])
+
+// rgb slider
+const redRangeInput = document.getElementById('rgb-red-input-picker')
+const greenRangeInput = document.getElementById('rgb-green-input-picker')
+const blueRangeInput = document.getElementById('rgb-blue-input-picker')
+// rgb text
+const redTextInput = document.getElementById('input-text-red')
+const greenTextInput = document.getElementById('input-text-green')
+const blueTextInput = document.getElementById('input-text-blue')
+
 
 // 當拉桿改變時，改變背景顏色
 redRangeInput.addEventListener('input', e => {

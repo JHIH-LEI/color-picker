@@ -14,34 +14,20 @@
     <div class="header">
       <h2>Pick a color!</h2>
     </div>
-    <div class="rgb">
-      <div class="rgb-input" id="rgb-red">
-        <lable class="tag" for="rgb-red-input-picker" id="red-tag">R</lable>
-        <input id="rgb-red-input-picker" type="range" value="0" min="0" max="255">
-        <input class="rgb-text-input" id="input-text-red" type="text" placeholder="0" minlength="1" maxlength="3"
-          size="5">
-      </div>
-      <div class="rgb-input" id="rgb-green">
-        <lable class="tag" for="rgb-green-input-picker" id="green-tag">G</lable>
-        <input id="rgb-green-input-picker" type="range" value="0" min="0" max="255">
-        <input class="rgb-text-input" id="input-text-green" type="text" placeholder="0" minlength="1" maxlength="3"
-          size="5">
-      </div>
-      <div class="rgb-input" id="rgb-blue">
-        <lable class="tag" for="rgb-blue-input-picker" id="blue-tag">B</lable>
-        <input id="rgb-blue-input-picker" type="range" value="0" min="0" max="255">
-        <input class="rgb-text-input" id="input-text-blue" type="text" placeholder="0" minlength="1" maxlength="3"
-          size="5">
-      </div>
-      <div class="rgb-picker">
-        <label for="pick">Select color:</label>
-        <input type="color" id="pick" name="rgb-color" value="#FFFFFF"><br><br>
 
-      </div>
+    <div class="rgb">
+      <!-- render -->
     </div>
-    <div class="hex">
-      <input id="hex-input-text" type="text" placeholder="#FFFFFF">
+
+    <div class="rgb-picker">
+      <label for="pick">Select color:</label>
+      <input type="color" id="pick" name="rgb-color" value="#FFFFFF"><br><br>
+
     </div>
+  </div>
+  <div class="hex">
+    <input id="hex-input-text" type="text" placeholder="#FFFFFF">
+  </div>
   </div>
   <script src="index.js"></script>
 </body>
