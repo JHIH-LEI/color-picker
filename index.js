@@ -61,11 +61,20 @@ blueRangeInput.addEventListener('input', e => {
 colorPicker.addEventListener('input', (e) => {
   let colorHex = e.target.value
   changeBackground(colorHex)
+  // 改變rgb slider 用parseInt將Hex換成10進位整數
+  // hex的格式 #RRGGBB ，#不須轉換要刪掉，否則會變NAN
+  let red = parseInt(colorHex.slice(1, 3), 16)
+  let green = parseInt(colorHex.slice(3, 5), 16)
+  let blue = parseInt(colorHex.slice(5, 7), 16)
+  // 讓rgb輸入框顏色跟著改變
+  redTextInput.value = red
+  greenTextInput.value = green
+  blueTextInput.value = blue
+  // 讓rgb slider跟著變化
+  redRangeInput.value = red
+  greenRangeInput.value = green
+  blueRangeInput.value = blue
 })
-
-function changeBackground(color) {
-  document.body.style.backgroundColor = color
-}
 
 document.body.addEventListener('input', e => {
   // 兩種情況，背景顏色是被color picker改變或是rgb slider
@@ -216,3 +225,6 @@ function rgbToHex(r, g, b) {
   return ('#' + (redHex + greenHex + blueHex).replace(/,/g, '')) //replace把逗號刪掉
 }
 
+function changeBackground(color) {
+  document.body.style.backgroundColor = color
+}
