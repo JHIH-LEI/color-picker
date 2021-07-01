@@ -77,7 +77,6 @@ document.body.addEventListener('input', e => {
 function rgbToHex(r, g, b) {
   // # + redHex + greenHex + blueHex = hex
   // 分別將r g b轉為hex
-  let hex = ""
   let redHex = []
   let blueHex = []
   let greenHex = []
