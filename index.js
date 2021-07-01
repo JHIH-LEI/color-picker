@@ -58,8 +58,13 @@ blueRangeInput.addEventListener('input', e => {
   blueTextInput.value = blueNum
 })
 
-function changeBackground(rgb) {
-  document.body.style.backgroundColor = rgb
+colorPicker.addEventListener('input', (e) => {
+  let colorHex = e.target.value
+  changeBackground(colorHex)
+})
+
+function changeBackground(color) {
+  document.body.style.backgroundColor = color
 }
 
 document.body.addEventListener('input', e => {
