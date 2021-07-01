@@ -58,6 +58,44 @@ blueRangeInput.addEventListener('input', e => {
   blueTextInput.value = blueNum
 })
 
+// 當使用者輸入rgb色碼時，能夠改變顏色跟slider
+redTextInput.addEventListener('input', (e) => {
+  if (redTextInput.value > 255) {
+    redRangeInput.value = 255
+    redTextInput.value = 255
+  }
+  redNum = redTextInput.value
+  redRangeInput.value = redNum
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
+  colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
+  hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
+})
+
+greenTextInput.addEventListener('input', (e) => {
+  if (greenTextInput.value > 255) {
+    greenTextInput.value = 255
+    greenRangeInput.value = 255
+  }
+  greenNum = greenTextInput.value
+  greenRangeInput.value = greenNum
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
+  colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
+  hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
+})
+
+blueTextInput.addEventListener('input', (e) => {
+  if (blueTextInput.value > 255) {
+    blueTextInput.value = 255
+    blueRangeInput.value = 255
+  }
+  blueNum = blueTextInput.value
+  blueRangeInput.value = blueNum
+  changeBackground(`rgb(${redNum},${greenNum},${blueNum})`)
+  colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
+  hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
+})
+
+
 colorPicker.addEventListener('input', (e) => {
   let colorHex = e.target.value
   changeBackground(colorHex)
