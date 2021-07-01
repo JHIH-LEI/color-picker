@@ -68,10 +68,15 @@ function changeBackground(color) {
 }
 
 document.body.addEventListener('input', e => {
-  // 讓hex輸入框數字跟著改變
-  hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
-  // 讓color picker裡面的顏色跟著改變
-  colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
+  // 兩種情況，背景顏色是被color picker改變或是rgb slider
+  if (e.target.id === 'pick') {
+    hexInputText.value = colorPicker.value
+  } else if (e.target.type === 'range') {
+    // 讓hex輸入框數字跟著改變
+    hexInputText.value = rgbToHex(redNum, greenNum, blueNum)
+    // 讓color picker裡面的顏色跟著改變
+    colorPicker.value = rgbToHex(redNum, greenNum, blueNum)
+  }
 })
 
 function rgbToHex(r, g, b) {
